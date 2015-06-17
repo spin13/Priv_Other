@@ -1,0 +1,32 @@
+﻿$ hostnamectn set-hostname xxx.xxx.xxx.xxx
+$ hostnamectl
+
+$ vi /etc/sysconfig/network-scripts/ifcfg-xxxxxxxx
+BOOTPROTO=static
+IPADDR=xxx.xxx.xxx.xxx
+GATEWAY=xxx.xxx.xxx.xxx
+PREFIX=24
+DOMAIN=zzzzzzzzz
+ONBOOT=yes
+DNS1=xxx.xxx.xxx.xxx
+DNS2=xxx.xxx.xxx.xxx
+
+$ systemctl stop NetworkManager.service
+$ systemctl disable NetworkManager.service
+$ systemctl restart network.service
+$ systemctl enable network.service
+
+
+
+【設定確認】
+ip addr    //IPアドレス
+ip ro      //デフォルトゲートウェイ
+
+
+【トラブルシューティング】
+[pingが飛ばない]
+・内部ネットワークにも飛ばない
+→DNS以外でそもそもどこかの設定を間違えている
+
+・内部ネットワークには飛ぶが外部に飛ばない
+→正引きがダメで逆引きができるならほぼDNS設定の間違い

@@ -1,0 +1,2 @@
+﻿$ yum install libevent-devel ncurses-devel
+$ ldconfig -p |grep libevent

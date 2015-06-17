@@ -1,0 +1,7 @@
+﻿$ yum install docker-io
+
+$ vi /etc/sysconfig/docker
+GOTRACEBACK='crash' を追記
+
+$ systemctl restart docker
+$ systemctl enable docker

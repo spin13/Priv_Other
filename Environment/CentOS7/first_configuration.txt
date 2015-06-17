@@ -1,0 +1,21 @@
+﻿$ setenfoce 0
+$ getenforce
+
+$ yum install -y mlocate ftp
+$ updatedb
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+$ yum groupinstall "Virtualization Host"
+
+$ yum install gcc
+
+$ systemctl stop postfix
+$ systemctl disable postfix
+
+
+$ sudo yum install epel-release
+$ vi /etc/yum.repos.d/epel.repo
+enable=0
+
+$ sudo yum --enablerepo=epel install ccze  //tail等にパイプで色づけ

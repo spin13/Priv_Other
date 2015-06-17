@@ -1,0 +1,11 @@
+﻿$ vi /etc/yum.repos.d/nginx.repo
+[nginx]
+name=nginx repo
+#baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=0
+
+$ yum --enablerepo=nginx install nginx
+$ systemctl start nginx
+$ systemctl enable nginx

@@ -1,0 +1,53 @@
+﻿$ vi /etc/yum.repos.d/nginx.repo
+[nginx]
+name=nginx repo
+#baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=0
+
+$ yum --enablerepo=nginx install nginx
+
+$ vi /etc/nginx/conf.d/default.conf
+    location / {
+        root   /var/www;
+        index  index.php index.html index.htm;
+    }
+
+$ vi /etc/sysconfig/iptables
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+を追記
+
+$ /etc/rc.d/init.d/iptables start
+$ setenforce 0
+
+
+【PHP連携】
+$ yum install php-fpm
+$ vi /etc/php-fpm.d/www.conf
+user = apache
+group = apache
+をnginxに変える
+
+$ vi /etc/nginx/conf.d/default.conf
+serverブロック内に
+    location ~ \.php$ {
+        root           /var/www;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+を追加
+
+$ /etc/init.d/php-fpm start
+$ /etc/init.d/nginx restart
+
+
+
+
+$ groupadd www
+$ useradd -g www nginx
+$ usermod -s /bin/false nginx
+$ vi /etc/nginx/nginx.conf
+

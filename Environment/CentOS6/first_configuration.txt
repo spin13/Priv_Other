@@ -1,0 +1,4 @@
+﻿$ visudo
+USER ALL=(ALL) ALL
+$ yum install -y mlocate ftp openssh-clients gcc php vim
+$ alias vi=vim

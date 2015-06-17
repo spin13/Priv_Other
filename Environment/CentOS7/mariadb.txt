@@ -1,0 +1,8 @@
+﻿$ yum install mariadb-server
+$ vi /etc/my.cnf
+[mysqld]
+character-set-server=utf8
+
+$ systemctl start mariadb 
+$ systemctl enable mariadb
+$ mysql_secure_installation

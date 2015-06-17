@@ -1,0 +1,11 @@
+﻿$ yum install ntp
+$ vi /etc/ntp.conf
+serverを指定
+restrictの設定
+
+$ ntpdate ntp1.jst.mfeed.ad.jp
+
+$ systemctl start ntpd
+$ systemctl enable ntpd
+
+$ ntpq -p

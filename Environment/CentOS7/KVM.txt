@@ -1,0 +1,44 @@
+﻿$ yum install bridge-utils iputils net-tools bind-utils
+$ yum install docker qemu-kvm libvirt virt-install
+
+$ vi /etc/sysconfig/network-scripts/ifcfg-br0
+DEVICE=br0
+TYPE=Bridge
+BOOTPROTO=static
+IPADDR=xxxxxxxxxx
+PREFIX=24
+GATEWAY=xxxxxxxxxxxxx
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=br0
+ONBOOT=yes
+DEFROUTE=yes
+
+
+
+
+$ vi /etc/sysconfig/network-scripts/ifcfg-exxxxxx
+  BRIDGE=br0 を追記
+
+
+$ brctl show
+
+$ yum install -y libvirt-devel gcc
+$ systemctl start libvirtd && systemctl enable libvirtd
+
+$ virt-clone -o CentOS_ -n xxxx -f /var/lib/libvirt/images/xxxx.img
+$ virsh start xxxx
+$ virsh console xxxx
+
+
+
+
+

@@ -1,0 +1,8 @@
+﻿$ hostnamectl set-hostname xxxxxxxxxxxx
+
+$ nmcli c modify enonnnnnnnn ipv4.addresses xxxxx 
+$ nmcli c modify enonnnnnnnn ipv4.gateway xxxxx 
+$ nmcli c modify enonnnnnnnn ipv4.dns zzzzzz
+$ nmcli c modify enonnnnnnnn ipv4.method manual 
+$ nmcli c down enonnnnnnnn
+$ nmcli c up enonnnnnnnn

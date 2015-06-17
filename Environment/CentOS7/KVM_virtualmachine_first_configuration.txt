@@ -1,0 +1,6 @@
+﻿eth1に置き換わっているので
+/etc/udev/rules.d/70-persistent-net.rules
+の1段目のSUBSYSTEM~~をコメントアウト
+2段目のSUBSYSTEM~~のeth1となっているところをeth0にして
+ATTR{address}==のMAC ADDRESSをコピーして
+/etc/sysconfig/network-scripts/ifcfg-eth0のHWADDRにペースト
