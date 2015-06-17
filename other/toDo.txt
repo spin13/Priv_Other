@@ -7,3 +7,5 @@ GO
 Android Studio
 Unity
 box
+MongoDB
+python

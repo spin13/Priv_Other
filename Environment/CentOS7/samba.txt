@@ -1,0 +1,20 @@
+$ yum install samba samba-client
+$ mkdir /home/samba
+$ chmod 770 /home/samba
+$ groupadd smb
+$ chgrp smb /home/samba
+$ vi /etc/samba/smb.conf
+[smb]
+   path=/home/samba
+   writable=yes
+   create mode=0770
+   directory mode=0770
+   share modes=yes
+   guest ok=no
+   valid users=@smb
+
+$ systemctl....
+
+$ useradd usr1
+$ smbpasswd -a usr1
+$ sudo usermod -G smb usr1
