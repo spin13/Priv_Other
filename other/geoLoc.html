@@ -13,13 +13,14 @@ navigator.geolocation.getCurrentPosition(
     function (pos) {
         var latit=pos.coords.latitude;
         longi=pos.coords.longitude;
-        document.write("緯度:"+latit+"<br />"
-        +"経度:"+longi+"<br />"+"aaa");
-        alert(1);
+        document.write("緯度:"+latit+"<br />"+"経度:"+longi+"<br />"+"aaa");
+
+        document.write('<iframe width="600" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.jp/maps?f=q&hl=ja&q=' +latit+','+longi+'&t=m&om=0&ie=UTF8&oe=UTF8&ll=35.508191,139.4440022&z=17&output=embed"></iframe>');
       },
     function (err){
     	document.write("error");
-    }
+    },
+    "enableHighAccuracy":true;,
 );
 </script>
 </body>
