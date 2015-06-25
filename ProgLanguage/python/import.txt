@@ -1,0 +1,11 @@
+[./import/Config.py]
+TTT="aiueo"
+
+
+
+[main.py]
+import sys, os
+sys.path.append('./import/')
+import Config
+
+print Config.TTT

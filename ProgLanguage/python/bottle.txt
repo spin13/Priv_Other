@@ -1,0 +1,10 @@
+from bottle import route, run
+from mak.template import Template
+
+@route('/ttest')
+def ttest():
+	return "aiu"
+
+run(server='cgi')
+
+
