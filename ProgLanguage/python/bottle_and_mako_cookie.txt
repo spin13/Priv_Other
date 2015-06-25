@@ -21,14 +21,23 @@ class Auth:
         ret=u"id="+id+u" パスワード="+pwd
 
         response.set_cookie("id", id)
+        response.set_cookie("pass", pwd)
 
-        redirect(ROOTPATH+"/disp")
+        redirect(ROOTPATH+"/../setmore.html")
         #return "hello %s aiueo"%id
+
+    @btl.route("/set_more", method="post")
+    def set_more():
+        response.set_cookie("v1", request.forms.get("v1"))
+        redirect(ROOTPATH+"/disp")
+
 
     @btl.route("/disp")
     def dist():
         id=request.get_cookie("id")
-        return "OK id="+id
+        password=request.get_cookie("pass")
+        v1=request.get_cookie("v1")
+        return "OK id="+id+"<br />pass="+password+"<br />"+v1
 
 
 run(btl, server="cgi", debug=True)

@@ -1,5 +1,5 @@
 from bottle import route, run
-from mak.template import Template
+from mako.template import Template
 
 @route('/ttest')
 def ttest():
