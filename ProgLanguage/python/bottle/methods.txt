@@ -1,0 +1,6 @@
+﻿#cookieの有無は if(request.get_cookie("isVisited") 等で確認
+
+from bottle import Bottle, route, run, request, redirect, response
+
+response.set_cookie("key", "value")  # keyにvalueを入れる
+request.get_cookie("key") #keyのvalueを返す

@@ -1,0 +1,43 @@
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+import sys, os
+import hashlib
+import urllib2
+import cookielib
+sys.path.append("/usr/local/bin")
+from bottle import Bottle, route, run, request, redirect, response
+from mako.template import Template
+from mako.lookup import TemplateLookup
+ROOTPATH=""
+
+btl=Bottle()
+class Auth:
+    @btl.route("/auth", method="post")
+    def auth():
+        lookTemp=TemplateLookup(directories=["mako_tmpl"], input_encoding="utf-8", output_encoding="utf-8")
+        temp=lookTemp.get_template("test.tmpl")
+        id=request.forms.get("id")
+        pwd=hashlib.md5(request.forms.get("pass")).hexdigest()
+        ret=u"id="+id+u" パスワード="+pwd
+
+        response.set_cookie("id", id)
+        response.set_cookie("pass", pwd)
+
+        redirect(ROOTPATH+"/../setmore.html")
+        #return "hello %s aiueo"%id
+
+    @btl.route("/set_more", method="post")
+    def set_more():
+        response.set_cookie("v1", request.forms.get("v1"))
+        redirect(ROOTPATH+"/disp")
+
+
+    @btl.route("/disp")
+    def dist():
+        id=request.get_cookie("id")
+        password=request.get_cookie("pass")
+        v1=request.get_cookie("v1")
+        return "OK id="+id+"<br />pass="+password+"<br />"+v1
+
+
+run(btl, server="cgi", debug=True)

@@ -1,0 +1,17 @@
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+import sys, os
+import hashlib
+sys.path.append("/usr/local/bin")
+from bottle import route, run, request
+
+class Auth:
+    @route("/auth", method="post")
+    def auth():
+        id=request.forms.get("id")
+        pwd=hashlib.md5(request.forms.get("pass")).hexdigest()
+        ret=u"id="+id+u" パスワード="+pwd
+        return ret
+
+
+run(server="cgi")
