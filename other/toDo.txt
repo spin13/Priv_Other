@@ -11,4 +11,4 @@ MongoDB
 python
 
 
-windows to virtualBox, and emulate vulnerable
+generate HASH collision DB
