@@ -6,3 +6,7 @@ character-set-server=utf8
 $ systemctl start mariadb 
 $ systemctl enable mariadb
 $ mysql_secure_installation
+
+
+$ yum install mysql-devel
+$ yum install php-devel
