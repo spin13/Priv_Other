@@ -11,4 +11,5 @@ MongoDB
 python
 
 
-generate HASH collision DB
+calphp modify for "it can modify DB by form"
+
