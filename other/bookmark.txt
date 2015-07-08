@@ -7,3 +7,5 @@ http://blog.livedoor.jp/hiroumauma/archives/1314990.html
 http://www.jaeic.jp/2k-seizu.htm
 http://www.jaeic.jp/2k-qanda.htm
 http://www.jaeic.jp/2k-data.htm
+
+http://knowledgepia.com/en/k-blog/security/installing-metasploit-framework-on-centos-rhel-6
