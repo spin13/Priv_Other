@@ -4,6 +4,9 @@ http://hackertyper.net/
 http://blog.livedoor.jp/hiroumauma/archives/1314990.html
 https://www.virustotal.com/
 http://n.pentest.ninja/
+https://www.kali.org/penetration-testing/passing-hash-remote-desktop/
+http://securitymemo.blogspot.jp/
+http://insecure.org/sploits.html
 
 
 http://www.jaeic.jp/2k-seizu.htm
