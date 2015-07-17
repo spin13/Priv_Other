@@ -13,6 +13,7 @@ http://uwazumi.honeniq.net/entry/2013/11/21/001559
 http://bogus.jp/wp/?p=993
 http://lscharlie.exblog.jp/24006524/
 https://github.com/ctfs/write-ups-2015
+https://maps.google.com/locationhistory/
 
 
 http://www.jaeic.jp/2k-seizu.htm
