@@ -8,6 +8,7 @@ http://n.pentest.ninja/
 https://www.kali.org/penetration-testing/passing-hash-remote-desktop/
 http://securitymemo.blogspot.jp/
 http://insecure.org/sploits.html
+http://d.hatena.ne.jp/TipsMemo+computer-technology/20140225/p3
 
 
 http://www.jaeic.jp/2k-seizu.htm
