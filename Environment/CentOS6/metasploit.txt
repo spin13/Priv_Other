@@ -1,0 +1,50 @@
+$ sudo yum groupinstall -y "Development Tools"
+$ sudo yum install -y gettext-devel openssl-devel httpd-devel expat-devel libffi-devel readline-devel sqlite-devel gcc gcc-g++ gdbm-devel libxslt-devel curl-devellibxml2-devel zlib-devel java-1.7.0-openjdk libpcap-devel
+
+$ sudo wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+$ ./configure --prefix=/usr/local
+$ make && make install
+
+$ svn co https://svn.nmap.org/nmap
+$ ./configure
+$ make
+$ make install
+$ make clean
+
+$ vi /etc/yum.repos.d/CentOS-Base.repo
+[base], [update]の項に
+exclude=postgresql*
+
+$ wget http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-6.noarch.rpm
+$ rpm -ivh pgdg-centos92-9.2-6.noarch.rpm
+$ yum install postgresql92-server postgresql92-devel postgresql92
+$ service postgresql-9.2 initdb
+$ vi /var/lib/pgsql/9.2/data/postgresql.conf
+listen_addresses=
+port=
+のコメントをはずす
+
+$ vi /var/lib/pgsql/9.2/data/pg_hba.conf
+local all all   ident map=<pg_ident.conf>
+host all all 127.0.0.1/32 md5
+
+$ vi /var/lib/pgsql/9.2/data/pg_ident.conf
+postgreuser postgres postgres
+
+$ service postgresql-9.2 restart
+$ echo export PATH=/usr/pgsql-9.2/bin:\$PATH >> /etc/bashrc
+$ source /etc/bashrc
+$ su - postgres
+$ createdb testdb
+
+$ wget ftp://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
+$ tar xzvf
+$ ./configure
+$ make && makeinstall
+
+$ wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.8.tgz
+$ tar xzvf
+$ ruby setub.rb
+$ gem update --system
+$ gem install msgpack sqlite3 activerecord pg redcarpet simplecovyard bundler rspec wirble
+
