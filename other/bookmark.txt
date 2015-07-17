@@ -14,6 +14,7 @@ http://bogus.jp/wp/?p=993
 http://lscharlie.exblog.jp/24006524/
 https://github.com/ctfs/write-ups-2015
 https://maps.google.com/locationhistory/
+http://www.pupha.net/archives/2133/
 
 
 http://www.jaeic.jp/2k-seizu.htm
