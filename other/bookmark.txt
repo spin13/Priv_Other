@@ -20,6 +20,7 @@ https://helpx.adobe.com/jp/flash-player/kb/228683.html
 https://html5sec.org/
 http://www.slideshare.net/zaki4649/free-securitycheck
 
+https://packetstormsecurity.com/files/tags/code_execution/
 https://www.rapid7.com/db/search?q=CVE-2014-4453
 
 
