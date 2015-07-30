@@ -3,6 +3,8 @@ OS:iOS7.1.1
 build:11D201
 browser:safari7.0
 
+iOS7.1.1 2014/04/22 release
+
 http://jvndb.jvn.jp/search/index.php?mode=_vulnerability_search_IA_VulnSearch&lang=ja&keyword=&useSynonym=1&vendor=52&product=1775&datePublicFromYear=2013&datePublicFromMonth=01&datePublicToYear=2013&datePublicToMonth=02&dateLastPublishedFromYear=&dateLastPublishedFromMonth=&dateLastPublishedToYear=&dateLastPublishedToMonth=&severity=&cwe=&searchProductId=
 https://support.apple.com/ja-jp/HT203014
 
@@ -11,3 +13,5 @@ CVE-2014-1368
 [CVE-2014-4377]
 http://tools4hack.santalab.me/jbapp-com-binamuse-cve-2014-4377-extra.html
 https://github.com/feliam/CVE-2014-4377
+
+http://jvndb.jvn.jp/ja/contents/2014/JVNDB-2014-005896.html
