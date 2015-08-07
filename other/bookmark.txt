@@ -23,6 +23,8 @@ http://www.slideshare.net/zaki4649/free-securitycheck
 https://packetstormsecurity.com/files/tags/code_execution/
 https://www.rapid7.com/db/search?q=CVE-2014-4453
 
+http://www.tryphp.net/twitterapiv11_webapp/
+
 
 
 http://knowledgepia.com/en/k-blog/security/installing-metasploit-framework-on-centos-rhel-6
