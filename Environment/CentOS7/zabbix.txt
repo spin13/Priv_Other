@@ -1,21 +1,52 @@
-$ sudo yum install http://repo.zabbix.com/zabbix/2.2/rhel/7/x86_64/zabbix-release-2.2-1.el7.noarch.rpm
-$ sudo yum install zabbix-server-mysql zabbix-web-mysql zabbix-web-japanese zabbix-agent
+[zabbix 2.2]
+yum install http://repo.zabbix.com/zabbix/2.2/rhel/7/x86_64/zabbix-release-2.2-1.el7.noarch.rpm
 
-DB設定
-$ mysql -u root -p
-create database zabbix;
-grant all privileges on zabbix.* to zabbix@localhost identified by 'password' ;
-flush privileges;
+[zabbix 2.4]
+yum install http://repo.zabbix.com/zabbix/2.4/rhel/7/x86_64/zabbix-release-2.4-1.el7.noarch.rpm
 
-$ sudo mysql -uroot -p zabbix < /usr/share/doc/zabbix-server-mysql-2.2.9/create/schema.sql
-$ sudo mysql -uroot -p zabbix < /usr/share/doc/zabbix-server-mysql-2.2.9/create/images.sql
-$ sudo mysql -uroot -p zabbix < /usr/share/doc/zabbix-server-mysql-2.2.9/create/data.sql
+# yum install maridb mariadb-devel mariadb-server
+# yum install zabbix-server-mysql zabbix-web-mysql zabbix-web-japanese zabbix-agent
+
+# vi /etc/my.cnf
+character-set-server = utf8
+collation-server     = utf8_general_ci
+skip-character-set-client-handshake
+innodb_file_per_table
+
+systemctl restart , enable
+
+
+# mysql -u root
+
+mysql> CREATE DATABASE zabbix;
+mysql> grant all privileges on zabbix.* to zabbix@localhost identified by 'password' ;
+mysql> flush privileges;
+
+# mysql -u root zabbix < /usr/share/doc/zabbix-server-mysql-2.2.10/create/schema.sql
+# mysql -u root zabbix < /usr/share/doc/zabbix-server-mysql-2.2.10/create/images.sql
+# mysql -u root zabbix < /usr/share/doc/zabbix-server-mysql-2.2.10/create/data.sql
 
 # vi /etc/zabbix/zabbix_server.conf
-DBUser=
-DBPassword=
+DBPasswordの設定
 
-# systemctl start zabbix-server
-# systemctl enable zabbix-server
-# systemctl start zabbix-agent
-# systemctl enable zabbix-agent
+# vi /etc/httpd/conf.d/zabbix.conf
+php_value date.timezone Asit/Tokyo
+
+
+[サービス追加及び起動]
+systemctl start zabbix-server
+systemctl enable zabbix-server
+systemctl start zabbix-agent
+systemctl enable zabbix-agent
+あぱちぇも
+
+
+
+http://[myIP]/zabbix/
+
+設定終わったら
+Admin, zabbix
+でログイン
+
+右上のprofileから日本語環境に
+設定→ホスト→無効から有効に
