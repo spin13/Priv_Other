@@ -50,3 +50,20 @@ Admin, zabbix
 
 右上のprofileから日本語環境に
 設定→ホスト→無効から有効に
+
+
+[クライアントの追加]
+# yum install http://repo.zabbix.com/zabbix/2.2/rhel/7/x86_64/zabbix-release-2.2-1.el7.noarch.rpm
+# yum install zabbix-agent
+
+# vi /etc/zabbix/zabbix_agentd.conf
+Server= zabbixホストのIP
+ListenIP=自分のIP
+
+# systemctl restart zabbix-agent
+# systemctl enable zabbix-agent
+
+
+zabbixのwebUIで
+設定→ホスト→ホストの作成
+てきとうなテンプレート選択
