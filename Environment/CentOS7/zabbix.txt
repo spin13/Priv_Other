@@ -33,6 +33,13 @@ DBPasswordの設定
 php_value date.timezone Asit/Tokyo
 
 
+# vi /etc/zabbix/zabbix_server.conf
+mysqlのユーザやパスワードを設定
+DBPassword=
+
+# vi /etc/zabbix/web/zabbix.conf.php
+mysqlのportは3306
+
 [サービス追加及び起動]
 systemctl start zabbix-server
 systemctl enable zabbix-server
