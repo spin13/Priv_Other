@@ -1,4 +1,4 @@
-﻿$ yum install docker-io
+﻿$ yum install docker
 
 $ vi /etc/sysconfig/docker
 GOTRACEBACK='crash' を追記

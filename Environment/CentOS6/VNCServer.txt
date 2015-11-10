@@ -1,0 +1,9 @@
+# yum -y install tigervnc-server
+# vncpasswd  //vncで使うパスワードを設定
+# chkconfig vncserver on
+# vncserver :1  //VNCサーバの起動
+
+
+クライアントで
+[IP]:1 
+といれれば接続できる
