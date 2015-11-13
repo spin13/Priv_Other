@@ -1,0 +1,4 @@
+# yum install -y epel-release
+# vi /etc/yum.repos.d/epel.repo
+enabled=0 に
+# yum--enablerepo=epel install -y tmux

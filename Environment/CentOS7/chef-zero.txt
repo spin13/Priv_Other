@@ -1,0 +1,6 @@
+$ gem install chef-zero
+$ gem install knife-zero
+$ chef-zero
+127.0.0.1で実行
+
+
