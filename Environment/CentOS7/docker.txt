@@ -5,3 +5,31 @@ GOTRACEBACK='crash' を追記
 
 $ systemctl restart docker
 $ systemctl enable docker
+
+
+$ docker pull cenos:6
+centOS6をとってくる
+
+$ docker images
+もってるイメージの一覧
+
+$ docker run -it centos:6
+コンテナをスタート
+Ctrl+q or Ctrl+p でコンテナを終了させないで戻る
+
+$ docker attach [ID]
+実行中のコンテナに接続
+
+$ docker ps
+実行しているコンテナの一覧
+-a ですべて
+
+$ docker start [ID]
+コンテナをスタート
+
+$ docker stop [ID]
+コンテナを停止
+
+$ docker rm [ID]
+コンテナを削除
+

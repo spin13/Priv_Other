@@ -1,0 +1,23 @@
+$ yum install -y make ruby ruby-devel ruby-gems
+$ gem install chef
+
+$ mkdir -p chef_repo/cookbooks
+$ cd chef_repo/cookbooks
+$ knife cookbook create setup-cent -o .
+設定ファイルを自動生成
+
+$ mkdir /etc/chef
+$ vi /etc/chef/solo.rb
+cookbook_path ["/home/user1/chef-repo/cookbooks"]
+
+$ vi setup-cent/recipes/default.rb
+実際にレシピを作成する
+
+#グループを作成する
+group "dev" do
+    gid 1000
+    action :create
+end
+
+$ chef-solo -o setup-cent
+作成したものを実行する
