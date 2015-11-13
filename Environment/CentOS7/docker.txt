@@ -15,7 +15,7 @@ $ docker images
 
 $ docker run -it centos:6
 コンテナをスタート
-Ctrl+q or Ctrl+p でコンテナを終了させないで戻る
+Ctrl+p Ctrl+q でコンテナを終了させないで戻る
 
 $ docker attach [ID]
 実行中のコンテナに接続
