@@ -1,1 +1,18 @@
+# yum install -y ruby ruby-devel openssl-devel
+https://downloads.chef.io/chef-server/
+からとってくる
+# rpm -Uvh chef-server-core-12.3.0-1.el7.x86_64.rpm
+# chef-server-ctl reconfigure
+# mkdir -p /etc/chef-server
+# chef-server-ctl user-create ユーザ名 名前 苗字 メールアドレス パスワード --filename ~/ユーザ名.pem
+# chef-server-ctl user-list
+ユーザリストの確認
 
+# chef-server-ctl org-create test01 test Software, Inc. --association_user ttest --filename ~/test.pem
+# chef-server-ctl org-list
+機関リストの確認
+
+
+ワークステーションの設定
+# curl -L https://www.opscode.com/chef/install.sh | bash
+# knife configure
