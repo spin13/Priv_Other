@@ -1,0 +1,19 @@
+﻿#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+import sys, os
+sys.path.append('/usr/local/bin')
+sys.path.append('./import/')
+import Config
+from bottle import route, run
+from mako.template import Template
+from mako.lookup import TemplateLookup
+
+@route('/ttest')
+def ttest():
+    lookTemp=TemplateLookup(directories=["./mako_tmpl"], input_encoding="utf-8", output_encoding="utf-8")
+    temp=Template(filename='./mako_tmpl/test.tmpl')
+    ret=temp.render(title=u"てすと", name=u"あいうえお")
+    return ret
+
+application=default_app()
+#run(bottle, server="cgi", debug=True)

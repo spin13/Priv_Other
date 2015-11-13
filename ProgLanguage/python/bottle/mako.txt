@@ -1,0 +1,5 @@
+[for]
+% for i in llist:
+	${i}
+% endfor
+\

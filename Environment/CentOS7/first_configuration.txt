@@ -6,7 +6,8 @@ $ updatedb
 $ systemctl stop firewalld
 $ systemctl disable firewalld
 
-$ yum groupinstall "Virtualization Host"
+#$ yum groupinstall "Virtualization Host"
+$ yum groupinstall "Development tools"
 
 $ yum install gcc
 
