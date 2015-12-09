@@ -38,3 +38,12 @@ $ docker rmi [ID]
 
 $ docker commit [ID] 名前:タグ
 コンテナをイメージとして保存
+
+$ docker exec -it [ID] [コマンド]
+コンテナ上でコマンドを実行
+
+$ docker logs [ID]
+コンテナの標準出力を受け取る
+
+$ docker run -it -p 1000:80 centos:6
+ポートを割り当ててコンテナを起動
