@@ -16,7 +16,6 @@ calc path rate of certifi
 
 
 DRDB
-deepmail
 dovecot
 solr
 smtp prox

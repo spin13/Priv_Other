@@ -1,3 +1,0 @@
-get the MAC ADDRESS
-dont forget IP addr by traceroute....
-
