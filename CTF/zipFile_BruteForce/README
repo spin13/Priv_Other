@@ -1,8 +1,0 @@
-#need password list file
-#if you want BruteForceAttack use "GenerateBruteData"
-#password list file must standard
-
-$ python zip_BruteForce.py < password_list
-
-#if it was found, print password
-
