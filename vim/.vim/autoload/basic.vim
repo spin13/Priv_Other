@@ -17,7 +17,8 @@ au BufRead,BufNew * match ZenkakuSpace /　/
 
 augroup filetypedetect
   au BufRead,BufNewFile *.c setfiletype c
-  au BufRead,BufNewFile *.cc, *.cpp setfiletype cc
+  au BufRead,BufNewFile *.cpp setfiletype cc
+  au BufRead,BufNewFile *.cc setfiletype cc
   au BufRead,BufNewFile *.java setfiletype java
   au BufRead,BufNewFile *.rb setfiletype ruby
   au BufRead,BufNewFile *.py setfiletype python
