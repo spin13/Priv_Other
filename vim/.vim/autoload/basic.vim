@@ -24,4 +24,5 @@ augroup filetypedetect
   au BufRead,BufNewFile *.py setfiletype python
   au BufRead,BufNewFile *.php setfiletype php
   au BufRead,BufNewFile *.js setfiletype javascript
+  au BufRead,BufNewFile *.yml setfiletype yaml
 augroup END
