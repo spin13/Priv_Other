@@ -25,4 +25,6 @@ augroup filetypedetect
   au BufRead,BufNewFile *.php setfiletype php
   au BufRead,BufNewFile *.js setfiletype javascript
   au BufRead,BufNewFile *.yml setfiletype yaml
+  au BufRead,BufNewFile *.slim setfiletype slim
+  au BufRead,BufNewFile *.html setfiletype html
 augroup END
