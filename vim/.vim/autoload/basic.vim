@@ -1,19 +1,4 @@
-set encoding=utf-8
-scriptencoding utf-8
-set number
-set ruler
-set list
-set expandtab
-set showmatch
-
-
-syntax off
-set background=dark
-colorscheme color_blind
-syntax on
-
-highlight ZenkakuSpace cterm=underline ctermfg=Blue guifg=Blue
-au BufRead,BufNew * match ZenkakuSpace /　/
+filetype plugin indent on
 
 augroup filetypedetect
   au BufRead,BufNewFile *.c setfiletype c
@@ -28,3 +13,4 @@ augroup filetypedetect
   au BufRead,BufNewFile *.slim setfiletype slim
   au BufRead,BufNewFile *.html setfiletype html
 augroup END
+
