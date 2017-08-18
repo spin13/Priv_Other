@@ -23,7 +23,7 @@ set backspace=indent,eol,start
 highlight ZenkakuSpace cterm=underline ctermfg=Blue guifg=Blue
 au BufRead,BufNew * match ZenkakuSpace /　/
 
-set background=dark
 syntax on
 set t_Co=256
-colorscheme color_blind
+colorscheme dracula
+set background=dark
